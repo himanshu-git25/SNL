@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="manifest" href="manifest.json" />
+  <title>SNL - NIGHTX IDE</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>SNL IDE - NIGHTX</h1>
+    <button onclick="runCode()">▶️ Run</button>
+    <button onclick="downloadCode()">💾 Save</button>
+  </header>
+
+  <main>
+    <textarea id="editor" placeholder="Write your NIGHTX code here...">print("Hello from NIGHTX")</textarea>
+    <pre id="output"></pre>
+  </main>
+
+  <script src="nightx.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -23,3 +23,8 @@
   <script src="app.js"></script>
 </body>
 </html>
+<input type="file" id="fileInput" style="display: none;" accept=".nx" onchange="uploadCode(event)" />
+<button onclick="runCode()">▶️ Run</button>
+<button onclick="downloadCode()">💾 Save</button>
+<button onclick="document.getElementById('fileInput').click()">📂 Upload</button>
+<button onclick="clearEditor()">🧹 Clear</button>

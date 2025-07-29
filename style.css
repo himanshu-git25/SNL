@@ -130,3 +130,20 @@ pre::-webkit-scrollbar-track {
     width: 100%;
   }
 }
+/* Add this in your style.css */
+.snl-logo {
+  font-family: 'Arial Black', sans-serif;
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 900;
+  color: #FFD700; /* Bright DHL Yellow */
+  background-color: #000000; /* Black background */
+  padding: 20px 40px;
+  display: inline-block;
+  border-radius: 10px;
+  text-decoration: none;
+  letter-spacing: 5px;
+  box-shadow: 0 0 10px #FFD700;
+  text-align: center;
+  user-select: none;
+}

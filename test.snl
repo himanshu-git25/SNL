@@ -1,0 +1,55 @@
+ntx Heyy
+prv_nightx.snl>>>
+snl_ntx.just>>
+start_pr( x.viii[A] )
+{
+    int number = 7;
+    str name = "NIGHTX";
+
+    void greet(str name) {
+        print("What’s up, " + name);
+    }
+
+    void sum_example() {
+        int a = 10;
+        int b = 20;
+        int sum = a + b;
+        print("Sum is: " + sum);
+    }
+
+    void loop_example() {
+        int i = 1;
+        while (i <= 5) {
+            print("Number: " + i);
+            i = i + 1;
+        }
+    }
+
+    void condition_example() {
+        int marks = 85;
+        if (marks >= 90) {
+            print("Grade: A");
+        } else if (marks >= 75) {
+            print("Grade: B");
+        } else {
+            print("Grade: C");
+        }
+    }
+
+    void array_example() {
+        int nums = [1, 2, 3, 4, 5];
+        int i = 0;
+        while (i < 5) {
+            print("Array Item: " + nums[i]);
+            i = i + 1;
+        }
+    }
+
+    void main() {
+        greet(name);
+        sum_example();
+        loop_example();
+        condition_example();
+        array_example();
+    }
+}

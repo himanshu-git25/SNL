@@ -82,3 +82,49 @@ function showToast(msg, isError = false) {
     toast.remove();
   }, 3000);
 }
+function runCode() {
+    const code = document.getElementById("editor").value;
+    const output = document.getElementById("output");
+
+    try {
+        // Convert NIGHTX syntax to JavaScript
+        let translated = translateNIGHTX(code);
+        output.innerText = eval(translated);
+    } catch (e) {
+        output.innerText = "Error: " + e.message;
+    }
+}
+
+function translateNIGHTX(code) {
+    let lines = code.split("\n");
+
+    let jsCode = "";
+
+    for (let line of lines) {
+        line = line.trim();
+
+        if (line.startsWith("start_pr")) {
+            jsCode += "function main() {\n";
+        } else if (line.startsWith("int ")) {
+            line = line.replace("int", "let");
+            jsCode += line + "\n";
+        } else if (line.startsWith("str ")) {
+            line = line.replace("str", "let");
+            jsCode += line + "\n";
+        } else if (line.startsWith("void ")) {
+            line = line.replace("void", "function");
+            jsCode += line + "\n";
+        } else if (line.includes("print(")) {
+            line = line.replace("print", "console.log");
+            jsCode += line + "\n";
+        } else if (line === "}") {
+            jsCode += "}\n";
+        } else {
+            jsCode += line + "\n";
+        }
+    }
+
+    jsCode += "\nmain();";
+
+    return jsCode;
+}

@@ -169,3 +169,14 @@ pre::-webkit-scrollbar-track {
 #run-btn:hover {
   background-color: #ffcc00;
 }
+.install-btn {
+  background-color: #FFD700;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 10px;
+}

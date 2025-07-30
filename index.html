@@ -1,37 +1,59 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Place this in <head> of your index.html -->
-<link rel="icon" type="image/png" href="snl_logo.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link rel="manifest" href="manifest.json" />
+  <meta name="description" content="SNL - NIGHTX IDE">
   <title>SNL - NIGHTX IDE</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="snl-icon.png" type="image/png" />
 </head>
 <body>
   <header>
-    <h1>SNL IDE - NIGHTX</h1>
-    <button onclick="runCode()">▶️ Run</button>
-    <button onclick="downloadCode()">💾 Save</button>
+    <div class="logo">
+      <img src="snl-icon.png" alt="SNL Logo" />
+      <h1>SNL Compiler</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><button onclick="newFile()">New</button></li>
+        <li><button onclick="openFile()">Open</button></li>
+        <li><button onclick="saveFile()">Save</button></li>
+        <li><button onclick="downloadCode()">Download</button></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
-    <textarea id="editor" placeholder="Write your NIGHTX code here...">print("Hello from NIGHTX")</textarea>
-    <pre id="output"></pre>
+    <section class="editor-section">
+      <h2>Write your NIGHTX Code</h2>
+      <textarea id="editor" placeholder="Start coding in NIGHTX...">
+ntx Heyy
+prv_nightx.snl>>>
+snl_ntx.just>>
+start_pr( x.viii[A] )
+{
+    int number = 7;
+    str name = "NIGHTX";
+
+    void greet(str name) {
+        print("What’s up, " + name);
+    }
+}
+      </textarea>
+      <button class="compile-btn" onclick="compileCode()">Compile</button>
+    </section>
+
+    <section class="output-section">
+      <h2>Output</h2>
+      <pre id="output">Click 'Compile' to run the code...</pre>
+    </section>
   </main>
 
-  <script src="nightx.js"></script>
+  <footer>
+    <p>&copy; 2025 NIGHTX Project | Created by Himanshu</p>
+  </footer>
+
   <script src="app.js"></script>
 </body>
 </html>
-<input type="file" id="fileInput" style="display: none;" accept=".nx" onchange="uploadCode(event)" />
-<button onclick="runCode()">▶️ Run</button>
-<button onclick="downloadCode()">💾 Save</button>
-<button onclick="document.getElementById('fileInput').click()">📂 Upload</button>
-<button onclick="clearEditor()">🧹 Clear</button>
-<button onclick="runCode()" id="run-btn">▶ Run</button>
-<!-- Add this where you want the logo to appear -->
-<div class="snl-logo">SNL</div>
-<button id="installBtn" style="display:none;" class="install-btn">Install SNL</button>
-<script src="app.js"></script>
